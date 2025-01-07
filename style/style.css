@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/*--zero--*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+* a {
+  text-decoration: none;
+  color: #f3ba2f;
+  transition: all 0.5s ease-in-out;
+}
+* a:hover {
+  color: #ffffff;
+  text-shadow: black 0 0 3px;
+}
+* a:active {
+  color: #ffffff;
+  text-shadow: black 0 0 2px;
+}
+* summary {
+  list-style: none;
+}
+* details summary::before {
+  content: "☰";
+  color: #004189;
+}
+* details[open] summary::before {
+  content: "✖";
+  color: #f3ba2f;
+}
+* li {
+  list-style-type: none;
+}
+
+/*--zero--*/
+body {
+  height: 100%;
+  margin: 0;
+  font-weight: 700;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo img {
+  max-height: 60px; /* Ограничить высоту логотипа */
+  width: auto; /* Сохранить пропорции */
+  display: block; /* Убрать возможные отступы */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1e1e1e;
+}
+
+.hidden-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.4941176471);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 2vh;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.hidden-menu.visible {
+  display: block;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25vh;
+}
+
+h1 {
+  margin-bottom: 3vh;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px;
+}
+
+#cryptoSymbol {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #f3ba2f;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+  background-color: rgba(9, 255, 0, 0.8549019608);
+  color: #ffffff;
+  text-shadow: black 0 0 2px;
+}
+
+#chart-info {
+  margin: 3vh;
+}
+
+#chart-section {
+  width: 100%;
+  max-width: 1200px; /* Максимальная ширина */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  height: 500px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+}
+
+#priceChart {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

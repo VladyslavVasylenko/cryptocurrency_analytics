@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Анализ трендов крипты</title>
+        <link rel="stylesheet" href="/style/style.css">
+        <link rel="icon" type="image/png" href="/logo/crypto-analyzer-logo.webp">
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <img src="/logo/crypto-analyzer-logo.webp" alt="Crypto Analyzer" />
+            </div>
+            <button class="menu-toggle">☰</button>
+            <nav class="hidden-menu">
+                <ul>
+                    <li><a href="https://price-tracker-rosy.vercel.app/" id="menuUrl" target="_blank">Приложение Price Tracker</a></li>
+                    <li><a href="contacts.html" id="menuContacts">Контакты</a></li>
+                    <!--
+                    <div class="language-switcher">
+                        <button class="language-toggle" data-lang="en">
+                            <a href="/lan/index.html">EN</a>
+                        </button>
+                        <button class="language-toggle" data-lang="ru">
+                            <a href="/index.html">RU</a>
+                        </button>
+
+                        <button class="language-toggle" data-lang="uk">UK</button>
+                        <button class="language-toggle" data-lang="cs">CS</button>
+                        <button class="language-toggle" data-lang="zh">ZH</button>
+                    </div>
+                    -->
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="intro">
+                <h1 id="header">Анализ трендов крипты</h1>
+                <input type="text" id="cryptoSymbol" placeholder="Введите тикер крипты (например, BTCUSDT)">
+                <button id="analyzeButton">Анализировать</button>
+            </section>
+
+            <section id="chart-section">
+                <canvas id="priceChart"></canvas>
+                <div id="chart-info">
+                    <p id="selected-symbol">Текущий тикер: <span></span></p>
+                    <p id="rsi">RSI: </p>
+                    <p id="sma">SMA: </p>
+                    <p id="trend-info">Тренд: </p>
+                    <p id="recommendation">Рекомендация: </p>
+                    <p id="last-update">Данные актуальны на: </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" id="footer">
+            <p>&copy; 2025 Crypto Analyzer</p>
+        </footer>
+
+        <script src="/JS/menu.js" type="module"></script>
+        <script src="/JS/script.js" type="module"></script>
+
+    </body>
+</html>
