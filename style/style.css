@@ -12,7 +12,7 @@
   transition: all 0.5s ease-in-out;
 }
 * a:hover {
-  color: #ffffff;
+  color: #1eff00;
   text-shadow: black 0 0 3px;
 }
 * a:active {
@@ -45,14 +45,6 @@ body {
   flex-direction: column;
 }
 
-.logo img {
-  max-height: 60px; /* Ограничить высоту логотипа */
-  width: auto; /* Сохранить пропорции */
-  display: block; /* Убрать возможные отступы */
-  border-radius: 10%;
-  box-shadow: #1e1e1e 0 0 3px;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,8 +52,13 @@ body {
   padding: 10px 20px;
   background-color: #1e1e1e;
 }
-
-.hidden-menu {
+.header .logo a img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+  box-shadow: #1e1e1e 0 0 3px;
+}
+.header .hidden-menu {
   display: none;
   position: absolute;
   top: 50px;
@@ -73,12 +70,10 @@ body {
   padding: 10px;
   z-index: 1000;
 }
-
-.hidden-menu.visible {
+.header .hidden-menu.visible {
   display: block;
 }
-
-.menu-toggle {
+.header .menu-toggle {
   background: none;
   border: none;
   color: #ffffff;
@@ -86,29 +81,29 @@ body {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   margin-bottom: 25vh;
 }
-
-h1 {
-  margin-bottom: 3vh;
-}
-
-.intro {
+.main .intro {
   text-align: center;
   margin: 20px;
 }
-
-#cryptoSymbol {
+.main .intro h1 {
+  margin-bottom: 3vh;
+}
+.main .intro #cryptoSymbol {
   width: 60%;
   padding: 10px;
   font-size: 16px;
   margin-right: 10px;
 }
-
-button {
+.main button {
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 700;
@@ -119,45 +114,81 @@ button {
   color: #000;
   transition: all 0.5s ease-in-out;
 }
-
-button:hover {
+.main button:hover {
   background-color: rgba(9, 255, 0, 0.8549019608);
   color: #ffffff;
   text-shadow: black 0 0 2px;
+  transform: scale(1.1);
 }
-
-#chart-info {
-  margin: 3vh;
-}
-
-#chart-section {
+.main .chart-section {
   width: 100%;
-  max-width: 1200px; /* Максимальная ширина */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   text-align: left;
   height: 500px;
 }
-
-canvas {
+.main .chart-section canvas {
   width: 100%;
   height: auto;
 }
-
-#priceChart {
+.main .chart-section .priceChart {
   width: 100% !important;
   height: 100% !important;
   margin: 0 auto;
 }
-
-.hidden {
-  display: none;
+.main .chart-section .chart-info {
+  margin: 3vh;
 }
 
 .footer {
   width: 100%;
   padding: 10px;
+  margin-top: 10vh;
   background-color: #333;
   color: white;
   text-align: center;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .header {
+    padding: 15px;
+  }
+  .main .intro {
+    margin: 10px;
+  }
+  .main .intro #cryptoSymbol {
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 3vh;
+    font-size: 14px;
+    margin-right: 0;
+  }
+  .main .intro #cryptoSymbol button {
+    width: 50%;
+  }
+  .main .intro .chart-section {
+    height: auto;
+    padding: 10px;
+  }
+  .main .intro .chart-section .priceChart {
+    max-width: 100% !important;
+    height: 250px;
+  }
+  .main .intro .chart-section canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 400px) {
+  .main .intro {
+    margin-bottom: 30vh;
+  }
+  .main .intro #cryptoSymbol {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */

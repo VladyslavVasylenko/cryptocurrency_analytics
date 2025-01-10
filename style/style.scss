@@ -11,7 +11,7 @@
     }
 
     a:hover {
-        color: #ffffff;
+        color: #1eff00;
         text-shadow: black 0 0 3px;
     }
 
@@ -52,13 +52,6 @@ body {
     flex-direction: column;
 }
 
-.logo img {
-    max-height: 60px; /* Ограничить высоту логотипа */
-    width: auto; /* Сохранить пропорции */
-    display: block; /* Убрать возможные отступы */
-    border-radius: 10%;
-    box-shadow:#1e1e1e 0 0 3px;
-}
 
 .header {
     display: flex;
@@ -66,105 +59,169 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #1e1e1e;
-}
 
-.hidden-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background-color: #0000007e;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 2vh;
-    padding: 10px;
-    z-index: 1000;
-}
+    .logo a img {
+        max-height: 60px; 
+        width: auto;
+        display: block; 
+        box-shadow:#1e1e1e 0 0 3px;
+    }
 
-.hidden-menu.visible {
-    display: block;
-}
-
-.menu-toggle {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25vh;
-}
-
-h1 {
-    margin-bottom: 3vh;
-}
-
-.intro {
-    text-align: center;
-    margin: 20px;
-}
-
-#cryptoSymbol {
-    width: 60%;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    background-color: #f3ba2f;
-    border: none;
-    border-radius: 5px;
-    color: #000;
-    transition: all 0.5s ease-in-out;
-}
-
-button:hover {
-    background-color: #09ff00da;
-    color: #ffffff;
-    text-shadow: black 0 0 2px;
-}
-
-#chart-info {
-    margin: 3vh;
-}
-
-#chart-section {
-    width: 100%;
-    max-width: 1200px; /* Максимальная ширина */
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-    height: 500px;
-}
-
-canvas {
-    width: 100%;
-    height: auto;
-}
-
-#priceChart {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 auto;
+    .hidden-menu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #0000007e;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 2vh;
+        padding: 10px;
+        z-index: 1000;
+    }
+    
+    .hidden-menu.visible {
+        display: block;
+    }
+    
+    .menu-toggle {
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 24px;
+        cursor: pointer;
+    }    
 }
 
 .hidden {
     display: none;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25vh;
+
+    .intro {
+        text-align: center;
+        margin: 20px;
+    
+        h1 {
+            margin-bottom: 3vh;
+        }
+    
+        #cryptoSymbol {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: #f3ba2f;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    button:hover {
+        background-color: #09ff00da;
+        color: #ffffff;
+        text-shadow: black 0 0 2px;
+        transform: scale(1.1);
+    }
+    
+    
+    .chart-section {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: left;
+        height: 500px;
+    
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+    
+        .priceChart {
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 auto;
+        }
+    
+        .chart-info {
+            margin: 3vh;
+        }
+    }
+}
+
 .footer {
     width: 100%;
     padding: 10px;
+    margin-top: 10vh;
     background-color: #333;
     color: white;
     text-align: center;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .main .intro {
+        margin: 10px;
+
+        #cryptoSymbol {
+            width: 90%;
+            padding: 5px;
+            margin-bottom: 3vh;
+            font-size: 14px;
+            margin-right:0;
+
+            button {
+                width: 50%;
+            }
+        }
+
+        .chart-section {
+            height: auto;
+            padding: 10px;
+    
+            .priceChart {
+                max-width: 100% !important;
+                height: 250px;
+            }
+        
+            canvas {
+                width: 100% !important; 
+                height: auto !important;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .main .intro {
+        margin-bottom: 30vh;
+
+        #cryptoSymbol {
+            font-size: 12px;
+        }
+    }
 }
